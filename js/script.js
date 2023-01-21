@@ -15,14 +15,13 @@ function isUniqueID(id){
 
 function addUserItem(){
     const product__id = document.getElementById("user__product__id").value;
-    const product__name = document.getElementById("user__product__name").value;
+    let product__name = document.getElementById("user__product__name").value;
     const product__price = document.getElementById("user__product__price").value;
-
-    makeEmpty();
 
     // Unique ID checking
     if(isUniqueID(product__id)){
         window.alert(`${product__id} is used for another product ID`);
+        document.getElementById("user__product__id").style.backgroundColor = 'red';
         return;
     }
 
@@ -32,16 +31,19 @@ function addUserItem(){
     // length of product name checking
     if(product__name.length > 60){
         window.alert(`${product__name} is too large to use for as product name`);
+        document.getElementById("user__product__name").style.backgroundColor = 'red';
         return;
     }
 
     // product price checking
     if(product__price < 0) {
         window.alert(`Negative value of any product is impossible`);
+        document.getElementById("user__product__price").style.backgroundColor = 'red';
         return;
     }
     if(product__price > 100000){
         window.alert(`${product__price} is huge amount for any product`);
+        document.getElementById("user__product__price").style.backgroundColor = 'red';
         return;
     }
 
@@ -70,6 +72,9 @@ function addUserItem(){
     single__item3.innerText = product__price;
     single__item4.append(edit__button);
     single__item5.append(delete__button);
+
+    
+    makeEmpty();
 
     row.append(single__item1,single__item2,single__item3,single__item4,single__item5);
     const table = document.getElementById("product__table");
