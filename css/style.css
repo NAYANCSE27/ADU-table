@@ -30,7 +30,8 @@ body{
 }
 
 #output__table{
-    margin: 1vh 10%;
+    margin: 5vh 10%;
+    padding: 5vh 5%;
     background-color: rgba(241, 187, 187, 0.377);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
