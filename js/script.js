@@ -21,11 +21,25 @@ function addUserItem(){
     const single__item1 = document.createElement("td");
     const single__item2 = document.createElement("td");
     const single__item3 = document.createElement("td");
+    const single__item4 = document.createElement("td");
+    const single__item5 = document.createElement("td");
+
+    let item__count = products.length;
+
+    const edit__button = document.createElement("button");
+    const delete__button = document.createElement("button");
+    edit__button.innerText = "Edit";
+    delete__button.innerText = "Delete";
+    edit__button.id = "edit"+item__count;
+    delete__button.id = "delete"+item__count;
+
     single__item1.innerText = product__id;
     single__item2.innerText = product__name;
     single__item3.innerText = product__price;
+    single__item4.append(edit__button);
+    single__item5.append(delete__button);
 
-    row.append(single__item1,single__item2,single__item3);
+    row.append(single__item1,single__item2,single__item3,single__item4,single__item5);
     const table = document.getElementById("product__table");
     table.append(row);
 }
