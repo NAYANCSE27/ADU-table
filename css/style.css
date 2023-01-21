@@ -11,4 +11,36 @@ body{
 
 #user__input{
     display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 4vh;
+    margin: 5vh 10%;
+    padding: 5vh 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#user__input input{
+    padding: 1vh 5%;
+}
+
+#user__item{
+    margin-left: 30%;
+    max-width: 30%;
+    min-width: 20%;
+}
+
+#output__table{
+    margin: 1vh 10%;
+    background-color: rgba(241, 187, 187, 0.377);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#output__table table{
+    margin: 2vh 0 2vh 5%;
+    border: 2px solid black;
+}
+
+tr, th, td{
+    border: 1px solid black;
+    margin: 1vh 10%;
 }
