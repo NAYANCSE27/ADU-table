@@ -13,24 +13,10 @@ function isUniqueID(id){
     return 0;
 }
 
-function isUniqueID(id){
-    for(let i = 0; i < products.length; i++) {
-        if(products[i].product__id === id)  return 1;
-    }
-    return 0;
-}
-
 function addUserItem(){
     const product__id = document.getElementById("user__product__id").value;
     let product__name = document.getElementById("user__product__name").value;
     const product__price = document.getElementById("user__product__price").value;
-
-    // Unique ID checking
-    if(isUniqueID(product__id)){
-        window.alert(`${product__id} is used for another product ID`);
-        document.getElementById("user__product__id").style.backgroundColor = 'red';
-        return;
-    }
 
     // Unique ID checking
     if(isUniqueID(product__id)){
@@ -56,7 +42,6 @@ function addUserItem(){
         window.alert(`${product__price} is huge amount for any product`);
         return;
     }
-
 
     products.push({product__id, product__name, product__price});
 
