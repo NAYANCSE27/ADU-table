@@ -47,7 +47,6 @@ function addUserItem(){
         return;
     }
 
-
     products.push({product__id, product__name, product__price});
 
 
