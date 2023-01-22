@@ -25,6 +25,29 @@ function makeInitail(){
     document.getElementById("user__product__price").style.backgroundColor = 'white';
 }
 
+
+//getting button id and taking action according to the id
+
+function deleteItem(){
+    let id = this.id;
+    id = id.slice(6);
+    
+    // getting the specific user id for delete it from the product list 
+    
+    let product__idd = document.getElementById("product__table").rows[id].cells[0].innerHTML;
+    //window.alert(product__idd);
+
+    for(let i=0; i<products.length; i++) {
+        if(products[i].product__id === product__idd){
+            products.splice(i,1);
+            break;
+        }
+    }
+
+    document.getElementsByTagName("tr")[id].remove();
+}
+
+
 function addUserItem(){
     const product__id = document.getElementById("user__product__id").value;
     let product__name = document.getElementById("user__product__name").value;
@@ -82,6 +105,12 @@ function addUserItem(){
     edit__button.id = "edit"+item__count;
     delete__button.id = "delete"+item__count;
 
+
+    // Delete Elements 
+
+    delete__button.setAttribute("onclick", deleteItem);
+    delete__button.onclick = deleteItem;
+
     single__item1.innerText = product__id;
     single__item2.innerText = product__name;
     single__item3.innerText = product__price;
@@ -97,3 +126,13 @@ function addUserItem(){
 
     makeInitail();
 }
+
+
+
+// resources:
+// 1. https://stackoverflow.com/questions/6956258/adding-onclick-event-to-dynamically-added-button#comment116479771_6956368
+// 2. https://stackoverflow.com/questions/10291017/how-to-get-id-of-button-user-just-clicked
+// 3. https://dirask.com/posts/JavaScript-remove-first-3-characters-from-string-xpzxd1
+// 4. https://www.geeksforgeeks.org/how-to-remove-the-table-row-in-a-table-using-javascript/
+// 5. https://www.w3schools.com/jsref/coll_table_cells.asp
+// 6. https://stackoverflow.com/questions/10024866/remove-object-from-array-using-javascript
