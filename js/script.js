@@ -15,7 +15,7 @@ function isUniqueID(id){
 
 function addUserItem(){
     const product__id = document.getElementById("user__product__id").value;
-    const product__name = document.getElementById("user__product__name").value;
+    let product__name = document.getElementById("user__product__name").value;
     const product__price = document.getElementById("user__product__price").value;
 
     makeEmpty();
