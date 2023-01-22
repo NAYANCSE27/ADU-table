@@ -13,6 +13,18 @@ function isUniqueID(id){
     return 0;
 }
 
+
+function makeInitail(){
+    document.getElementById("product__id__error").innerHTML = "";
+    document.getElementById("product__name__error").innerHTML = "";
+    document.getElementById("product__price__error").innerHTML = "";
+
+    
+    document.getElementById("user__product__id").style.backgroundColor = 'white';
+    document.getElementById("user__product__name").style.backgroundColor = 'white';
+    document.getElementById("user__product__price").style.backgroundColor = 'white';
+}
+
 function addUserItem(){
     const product__id = document.getElementById("user__product__id").value;
     let product__name = document.getElementById("user__product__name").value;
@@ -20,8 +32,9 @@ function addUserItem(){
 
     // Unique ID checking
     if(isUniqueID(product__id)){
-        window.alert(`${product__id} is used for another product ID`);
+        //window.alert(`${product__id} is used for another product ID`);
         document.getElementById("user__product__id").style.backgroundColor = 'red';
+        document.getElementById("product__id__error").innerHTML = "This ID is used for another product";
         return;
     }
 
@@ -30,20 +43,23 @@ function addUserItem(){
 
     // length of product name checking
     if(product__name.length > 60){
-        window.alert(`${product__name} is too large to use for as product name`);
+        //window.alert(`${product__name} is too large to use for as product name`);
         document.getElementById("user__product__name").style.backgroundColor = 'red';
+        document.getElementById("product__name__error").innerHTML = "Product name should less then 60 cherecters";
         return;
     }
 
     // product price checking
     if(product__price < 0) {
-        window.alert(`Negative value of any product is impossible`);
+        //window.alert(`Negative value of any product is impossible`);
         document.getElementById("user__product__price").style.backgroundColor = 'red';
+        document.getElementById("product__price__error").innerHTML = "Negative price is not possible";
         return;
     }
     if(product__price > 100000){
-        window.alert(`${product__price} is huge amount for any product`);
+        //window.alert(`${product__price} is huge amount for any product`);
         document.getElementById("user__product__price").style.backgroundColor = 'red';
+        document.getElementById("product__price__error").innerHTML = "Too large amount for single product";
         return;
     }
 
@@ -78,4 +94,6 @@ function addUserItem(){
     row.append(single__item1,single__item2,single__item3,single__item4,single__item5);
     const table = document.getElementById("product__table");
     table.append(row);
+
+    makeInitail();
 }
