@@ -44,7 +44,12 @@ function deleteItem(){
         }
     }
 
-    document.getElementsByTagName("tr")[id].remove();
+    if(deleteConfirm()){
+        document.getElementsByTagName("tr")[id].remove();
+    }
+    if(cancelConfirm()){
+        return;
+    }
 }
 
 
