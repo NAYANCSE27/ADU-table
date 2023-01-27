@@ -31,15 +31,15 @@ th {
     padding: 2vh 2%;
 }
 
-thead{
+thead {
     font-size: 20px;
 }
 
-tr:nth-child(odd){
+tr:nth-child(odd) {
     background-color: #fff1f1;
 }
 
-.list tr:nth-child(even){
+.list tr:nth-child(even) {
     background-color: #808086;
 }
 
@@ -128,4 +128,16 @@ label .validation__error {
 .action__button:active {
     box-shadow: #3c4fe0 0 3px 7px inset;
     transform: translateY(2px);
+}
+
+.fcc-btn {
+    background-color: #199319;
+    color: white;
+    padding: 1vh 2%;
+    text-decoration: none;
+    border-radius: 15%;
+}
+
+.fcc-btn:hover {
+    background-color: #223094;
 }

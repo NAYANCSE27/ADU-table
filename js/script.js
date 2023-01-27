@@ -14,7 +14,6 @@ function onFormSubmit(){
     resetForm();
 }
 
-
 // validation start here 
 
 function isNameValid(name) {
@@ -38,6 +37,8 @@ function isIdValid(id){
 }
 
 function readFormData(){
+    displayNone();
+
     let formData = {};
     let user__product__id = document.getElementById("product__id").value;
     if(isIdValid(user__product__id)){
@@ -92,8 +93,8 @@ function insertNewRecord(data) {
     cell1.innerHTML = data.product__id;
     cell2.innerHTML = data.product__name;
     cell3.innerHTML = data.product__price;
-    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a> 
-                       <a onClick="onDelete(this)">Delete</a>`;
+    cell4.innerHTML = `<a class="fcc-btn" onClick="onEdit(this)">Edit</a> 
+                       <a class="fcc-btn" onClick="onDelete(this)">Delete</a>`;
 }
 
 function resetForm(){
@@ -122,4 +123,15 @@ function onDelete(td) {
         document.getElementById("product__list").deleteRow(row.rowIndex);
         resetForm();
     }
+}
+
+function displayNone(){
+    const error__id = document.getElementById("product__id__error");
+    error__id.innerHTML = "";
+    
+    const error__name = document.getElementById("product__name__error");
+    error__name.innerHTML = "";
+    
+    const error__price = document.getElementById("product__price__error");
+    error__price.innerHTML = "";
 }
