@@ -102,3 +102,11 @@ function resetForm(){
     document.getElementById("product__price").value = "";
     selectRow = null;
 }
+
+function onDelete(td) {
+    if(confirm("Are you sure to delete this record?")){
+        row = td.parentElement.parentElement;
+        document.getElementById("product__list").deleteRow(row.rowIndex);
+        resetForm();
+    }
+}
