@@ -4,58 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Commerce</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CRUD Application javascript</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <div id="user__input">
-        <div>
-            <label for="">Product ID: </label>
-            <input id="user__product__id" type="number" placeholder="product id">
-            <p id="product__id__error"></p>
-        </div>
-        <div>
-            <label for="">Product Name: </label>
-            <input id="user__product__name" type="text" placeholder="product name">
-            <p id="product__name__error"></p>
-        </div>
-        <div>
-            <label for="">Product Price: </label>
-            <input id="user__product__price" type="number" placeholder="product price">
-            <p id="product__price__error"></p>
-        </div>
-        <button id="user__item" onclick="addUserItem()">Add Item</button>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label for="">Product ID: </label>
+                        <input type="number" placeholder="product id" name="product__id" id="product__id">
+                        <p id="product__id__error"></p>
+                    </div>
+                    <div>
+                        <label for="">Product Name: </label>
+                        <input type="text" placeholder="product name" name="product__name" id="product__name">
+                        <p id="product__name__error"></p>
+                    </div>
+                    <div>
+                        <label for="">Product Price: </label>
+                        <input type="number" placeholder="product price" name="product__price" id="product__price">
+                        <p id="product__price__error"></p>
+                    </div>
+                    <div class="form__action__buttons">
+                        <button class="action__button">Submit</button>
+                        <!-- <input type="submit" value="Submit"> -->
+                    </div>
+                </form>
+            </td>
+        </tr>
 
+        <tr>
+            <td>
+                <table class="list" id="product__list">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
-    <div id="output__table">
-        <caption class="table__caption">Table of content:</caption>
-        <table id="product__table">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </table>
+                    <tbody>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Are you sure you want to delete</p>
-                <button id="delete__confirm" onclick="deleteConfirm()">Confirm</button>
-                <button id="cancel__confirm" onclick="cancelConfirm()">Cancel</button>
-            </div>
-        
-        </div>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
 
-    </div>
-
-    <script src="js/script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
