@@ -103,6 +103,19 @@ function resetForm(){
     selectRow = null;
 }
 
+function onEdit(td) {
+    selectRow = td.parentElement.parentElement;
+    document.getElementById("product__id").value = selectRow.cells[0].innerHTML;
+    document.getElementById("product__name").value = selectRow.cells[1].innerHTML;
+    document.getElementById("product__price").value = selectRow.cells[2].innerHTML;
+}
+
+function updateRecord(formData){
+    selectRow.cells[0].innerHTML = formData.product__id;
+    selectRow.cells[1].innerHTML = formData.product__name;
+    selectRow.cells[2].innerHTML = formData.product__price;
+}
+
 function onDelete(td) {
     if(confirm("Are you sure to delete this record?")){
         row = td.parentElement.parentElement;
